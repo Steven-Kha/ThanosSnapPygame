@@ -7,7 +7,7 @@ class Settings():
         self.screen_height = 800
         self.bg_color = (167, 136, 168)
 
-        self.center_line_width = 5
+        self.center_line_width = 6
         self.center_line_height = self.screen_height
         self.center_line_color = (111, 60, 137)
 
