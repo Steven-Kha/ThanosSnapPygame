@@ -8,9 +8,13 @@ def check_events(ai_settings, screen):
         if event.type == pygame.QUIT:
             sys.exit()
 
-def update_screen(ai_settings, screen):
+def update_screen(ai_settings, stats, center_line, play_button, screen):
     # Redraw the screen during each pass through the loop.
-    screen.fill(ai_settings.bg_color)
+
+    # Draw the play button if the game is inactive.
+    if not stats.game_active:
+        screen.fill(ai_settings.bg_color)
+        play_button.draw_button()
 
     pygame.display.flip()
 
