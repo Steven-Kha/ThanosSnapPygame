@@ -19,7 +19,7 @@ class Center_Line(Sprite):
 
         self.color = ai_settings.center_line_color
 
-        self.height = float(ai_settings.left_paddle_height)
+        #self.height = float(ai_settings.left_paddle_height)
 
         #left_paddle starts at center left of screen
         self.rect.centery = self.screen_rect.centery
