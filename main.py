@@ -1,6 +1,6 @@
 import pygame
 from snapAlgorithmMain import infinitySnap
-infinitySnap()
+
 from center_line import Center_Line
 
 from settings import Settings
@@ -10,6 +10,9 @@ from nameToJudge import NameToJudge
 
 import game_functions as gf
 
+chosen = []
+avenger = []
+infinitySnap(chosen, avenger)
 def run_game():
     # Initialize game and create a screen object.
     pygame.init()
@@ -24,10 +27,13 @@ def run_game():
     start_game = False
 
     stats = GameStats(ai_settings)
-    chdnOfThanos = NameToJudge(ai_settings,screen, "")
+
+    #participant names, the VS string and more
+    gameText = NameToJudge(ai_settings, screen, "")
 
     #make the game objects
     center_line = Center_Line(ai_settings, screen)
+
 
     play_button = Button(ai_settings, screen, "Play")
 
@@ -38,7 +44,7 @@ def run_game():
         if stats.game_active:
             pass
 
-        gf.update_screen(ai_settings, stats, center_line, play_button, screen)
+        gf.update_screen(ai_settings, stats, center_line, gameText, play_button, screen)
 
 
 run_game()

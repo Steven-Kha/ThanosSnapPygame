@@ -2,7 +2,7 @@ import random
 import time
 import os
 from snapAlgorithm import load, versus, writeChosen, writeAvenger, writeMatchUp
-def infinitySnap():
+def infinitySnap(chosen, avenger):
     clear = lambda : os.system('cls')
 
 
@@ -19,8 +19,7 @@ def infinitySnap():
     biotic = load()
 
     #list of the chosen and the avengers
-    chosen = []
-    avenger = []
+
 
     lastOne = False
     lastOneChosen = False

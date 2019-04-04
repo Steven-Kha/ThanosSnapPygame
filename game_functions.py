@@ -20,11 +20,13 @@ def check_play_button(ai_settings, screen, stats, play_button, mouse_x,
         stats.game_active = True
 
 
-def update_screen(ai_settings, stats, center_line, play_button, screen):
+def update_screen(ai_settings, stats, center_line, gameText, play_button, screen):
     # Redraw the screen during each pass through the loop.
 
     screen.fill(ai_settings.bg_color)
+    gameText.draw_text()
     center_line.draw_center_line()
+
 
     # Draw the play button if the game is inactive.
     if not stats.game_active:

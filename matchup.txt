@@ -1,105 +1,105 @@
-Diego vs. Elias Jackson
-Kenneth Aguilar vs. Abhijeet Thakurdesai
-Suramya vs. Yesenia Martinez
-dkbatalla vs. Josh
-Franco vs. PS
-Kevin Lopez vs. Chantalle
-bryankho vs. kasimp
-gcald vs. Chetana
-Neel Potnis vs. Julian
-Adam Laviguer vs. Alyssa
-Carlos Garcia vs. raj
-kento_nitta vs. Dom F
-Sergio Herrera vs. Skha (you)
-Vanessa Delfin vs. Henry
-Ruby Abutaleb vs. Robert Gama
-IsaiahOdunze vs. Connor Gresko
-Shivam vs. Alex
-Dipen vs. Samantha M
-Beau vs. Kshitij Shah
-myang vs. Zach McEachern
-Matthew McCune vs. sam
-Robert Pace IV vs. mstfa.said
-Daniel Verdugo vs. dylansanderson
-TJ vs. Hector Medina
-Namanh Tran vs. Adrian
-Shree vs. Tirth
-Robert Ruiz vs. David
-Sharon Pak vs. Rushi Sharma
-Canyon Schwartz vs. ffej
-Stephen Snell vs. Ean McG
-Shradha vs. Fernando
-Emil Shahbazov vs. Seo Hyun Chang
-Kader Ustun vs. BN
-Holy Tran vs. karanjasani
-rojanrijal vs. Akhil
-Gilbert Paderogo vs. Jason Anthony
-Slacker vs. Shruti Taware
-Maygan vs. Lonnie
-Tesh Goyal vs. Nikhil
-Colin Hughes vs. Saket
-Kizar vs. Steven Steele
-Tu Tran vs. Raj
-Lorena vs. Whipitoutforha
-NicWebster96 vs. HoungHuy
-Oscar vs. Peter
-Arthur vs. William Bui
-Jimmy Xuan vs. Upal Patel
-Tina My Huynh vs. Shekhar Palit
-Taylor Noh vs. Cameron Mathos
-Luis Larco vs. Jesse
-int main() vs. Yoko Zhu
-natalina vs. Duy Do
-Roman Belaire vs. aB9
-Samit vs. madi
-Jason Jose vs. Laurensuki
-Jamesrw vs. Kristi
-Iben vs. Vandan Shah
-Ankit Sharma vs. Jacob Powell
-Eric Abbott vs. Jacob Biloki
-Jorge Jaquez vs. Andrew Gomez
-Vincent vs. Ariosto Kuit
-Jordan A vs. Juan Sanchez
-Jose Sanrindo vs. Michael
-Bryan Cuevas vs. Sharp-edged
-Rodney Nobles vs. BethHS
-Holland Ho vs. Michael Zendejas
-Tommy vs. An Nguyen
-Lambert Liu vs. Jvelasco
-edwardrios vs. Rohan Bedarkar
-Devin Heng vs. thatoneddrguy
-Steven Espin vs. Molita Nuon
-Joel vs. Riley
-Kevin Wong vs. Janeen Yamak
-Jamie Littleton vs. Gustavo Sopena
-Nate vs. Aaron
-BJ vs. Randy Le
-Kashyap vs. Anthony Berton
-Mason Huynh vs. Janelle
-Aparna Girme vs. poojagajjar
-Kenny vs. tastyles
-Nathan S vs. Himanshu Patel
-ckobayashi vs. Ryan Luong
-Chris vs. Jasmine Nguyen
-Payne vs. Will
-Vincent Bravinder vs. Liam
-Yaz vs. Derrick
-AB14799 vs. Kevin
-Huy Tran vs. Raxit
-conner cook vs. Chris Ahn
-Darryn Wong vs. Yong
-C9 HenryHuang vs. Zach
-codeSm1th vs. Parag
-Bryan C vs. yuki
-David Feinzimer vs. Kaine R
-Joshua Yun vs. Andrew lopez
-Jainam Mehta vs. animesh
-marriannee_ vs. Arthi Ramesh
-hho vs. Marek Sautter
-Graciela Orozco vs. CmdrSnuggle
-hollyh vs. Anushree Ankola
-Dayna A vs. Rishabh
-Alberto Rodriguez vs. Ray
-Bennett Lawrenz vs. Carina
-Navie vs. Jatin
-celine vs. fate 
+Slacker vs. Maygan
+tastyles vs. Jainam Mehta
+Juan Sanchez vs. Robert Ruiz
+Connor Gresko vs. Chetana
+Kshitij Shah vs. kento_nitta
+BN vs. Diego
+poojagajjar vs. Kristi
+Gustavo Sopena vs. Kader Ustun
+Michael vs. hollyh
+Michael Zendejas vs. Arthi Ramesh
+Holy Tran vs. Adrian
+Lonnie vs. Yong
+Samantha M vs. David Feinzimer
+Jason Anthony vs. Janeen Yamak
+Janelle vs. Bennett Lawrenz
+Samit vs. Dayna A
+Raj vs. Beau
+dkbatalla vs. Tirth
+Carlos Garcia vs. Jesse
+Josh vs. Kenneth Aguilar
+Sergio Herrera vs. Sharp-edged
+Colin Hughes vs. Jasmine Nguyen
+Ankit Sharma vs. Roman Belaire
+kasimp vs. Parag
+Elias Jackson vs. Raxit
+Jason Jose vs. Lambert Liu
+Kevin vs. Yaz
+bryankho vs. natalina
+An Nguyen vs. Navie
+Seo Hyun Chang vs. Holland Ho
+Jatin vs. Rohan Bedarkar
+Alyssa vs. Kashyap
+Mason Huynh vs. Vincent Bravinder
+Alberto Rodriguez vs. Marek Sautter
+edwardrios vs. Fernando
+Joshua Yun vs. ckobayashi
+Anthony Berton vs. Andrew lopez
+Sharon Pak vs. C9 HenryHuang
+Abhijeet Thakurdesai vs. Robert Pace IV
+Rishabh vs. Tu Tran
+Randy Le vs. Tommy
+Jorge Jaquez vs. Suramya
+Chantalle vs. Darryn Wong
+Ray vs. madi
+Iben vs. Whipitoutforha
+conner cook vs. Bryan C
+Daniel Verdugo vs. Namanh Tran
+Joel vs. Bryan Cuevas
+sam vs. Canyon Schwartz
+rojanrijal vs. Shivam
+Zach vs. Shradha
+Kevin Wong vs. Nate
+Laurensuki vs. Kaine R
+Kenny vs. Adam Laviguer
+David vs. Zach McEachern
+BJ vs. Molita Nuon
+Derrick vs. Vanessa Delfin
+Rodney Nobles vs. NicWebster96
+Huy Tran vs. Aaron
+karanjasani vs. Steven Steele
+Jordan A vs. Kevin Lopez
+Jvelasco vs. Eric Abbott
+Anushree Ankola vs. Rushi Sharma
+Henry vs. ffej
+Chris Ahn vs. Tina My Huynh
+Dom F vs. aB9
+Emil Shahbazov vs. Franco
+IsaiahOdunze vs. raj
+Oscar vs. thatoneddrguy
+Nikhil vs. Graciela Orozco
+Ariosto Kuit vs. Andrew Gomez
+gcald vs. int main()
+Riley vs. Ryan Luong
+hho vs. Shruti Taware
+Upal Patel vs. Skha (you)
+Neel Potnis vs. marriannee_
+CmdrSnuggle vs. Will
+HoungHuy vs. Tesh Goyal
+codeSm1th vs. Luis Larco
+Taylor Noh vs. Jimmy Xuan
+Peter vs. Ean McG
+Cameron Mathos vs. Carina
+Shekhar Palit vs. William Bui
+Jacob Biloki vs. Jose Sanrindo
+Kizar vs. Hector Medina
+Payne vs. BethHS
+Shree vs. Himanshu Patel
+Stephen Snell vs. mstfa.said
+animesh vs. Yoko Zhu
+Jacob Powell vs. Chris
+Devin Heng vs. yuki
+Gilbert Paderogo vs. Vincent
+PS vs. Ruby Abutaleb
+Alex vs. Jamie Littleton
+Liam vs. Lorena
+Matthew McCune vs. myang
+Arthur vs. Aparna Girme
+Akhil vs. Jamesrw
+Saket vs. celine
+TJ vs. Steven Espin
+dylansanderson vs. Robert Gama
+Julian vs. Duy Do
+Dipen vs. Vandan Shah
+Yesenia Martinez vs. AB14799
+Nathan S vs. fate 
