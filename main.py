@@ -12,6 +12,7 @@ import game_functions as gf
 
 chosen = []
 avenger = []
+stop = 0
 infinitySnap(chosen, avenger)
 def run_game():
     # Initialize game and create a screen object.
@@ -44,8 +45,8 @@ def run_game():
         if stats.game_active:
             pass
 
-        gf.update_screen(ai_settings, stats, center_line, gameText, chosen, avenger,
-                         play_button, screen)
+        gf.update_screen(ai_settings, stats, center_line, gameText, chosen,
+                         avenger, stop, play_button, screen)
 
 
 run_game()

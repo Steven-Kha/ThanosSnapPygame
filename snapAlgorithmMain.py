@@ -61,9 +61,9 @@ def infinitySnap(chosen, avenger):
     writeMatchUp(chosen, avenger)
 
     #sort list alphabetically
-    chosen.sort(key=str.lower)
+    #chosen.sort(key=str.lower)
 
-    avenger.sort(key=str.lower)
+    #avenger.sort(key=str.lower)
 
     #write the names of chosen to textfile
     writeChosen(chosen)

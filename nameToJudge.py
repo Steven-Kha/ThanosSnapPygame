@@ -15,8 +15,20 @@ class NameToJudge:
         # function to display left participant
         self.prepLeftName("")
 
+        #add avenger title below
+        self.prepAvengerLeft("")
+
+        #add fallen title below
+        self.prepChosenLeft("")
+
         #function to display right participant
         self.prepRightName("")
+
+        # add avenger title below
+        self.prepAvengerRight("")
+
+        # add fallen title below
+        self.prepChosenRight("")
 
         self.prepVS("V  S")
 
@@ -44,6 +56,19 @@ class NameToJudge:
         self.VS_rect = self.vsImage.get_rect()
         self.VS_rect.centery = self.screen_rect.centery
         self.VS_rect.centerx = self.screen_rect.centerx
+
+    def prepAvengerLeft(self, msg):
+        pass
+
+    def prepAvengerRight(self, msg):
+        pass
+
+    def prepChosenLeft(self, msg):
+        pass
+
+    def prepChosenRight(self, msg):
+        pass
+
 
     def draw_text(self):
         self.screen.blit(self.vsImage, self.VS_rect)

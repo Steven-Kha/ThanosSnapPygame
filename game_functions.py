@@ -22,39 +22,56 @@ def check_play_button(ai_settings, screen, stats, play_button, mouse_x,
         stats.game_active = True
 
 
-def update_screen(ai_settings, stats, center_line, gameText, chosen, avenger, play_button, screen):
-    # Redraw the screen during each pass through the loop.
+def update_screen(ai_settings, stats, center_line, gameText,
+                  chosen, avenger, stop, play_button, screen):
+    if stats.game_active:
+        length = 0
 
-    length = 0
+        if len(chosen) > len(avenger):
+            length = len(avenger)
+        else:
+            length = len(chosen)
 
-    if len(chosen)> len(avenger):
-        length = len(chosen)
-    else:
-        length = len(avenger)
+        #call = 0
 
-    call = 0
+        #call = random.randint(0, 1)
 
-    call = random.randint(0, 1)
-
-
-
-    for i in range(length):
-
-        screen.fill(ai_settings.bg_color)
-        time = pygame.time.get_ticks()
-        if time % 3000 == 0:
-            if call:
-                gameText.prepLeftName(chosen[i])
-                gameText.prepRightName(avenger[i])
-            else:
-                gameText.prepLeftName(avenger[i])
-                gameText.prepRightName(chosen[i])
-        gameText.draw_text()
-        center_line.draw_center_line()
+        print("pygame running the for loop in range(length) \n")
+        while stop < length:
+            print ("stop number: " + str(stop))
+            screen.fill(ai_settings.bg_color)
+            stime = pygame.time.get_ticks()
+            if stime % 1000 == 0:
+                gameText.prepLeftName(chosen[stop])
+                gameText.prepRightName(str(avenger[stop]) + " stop number: " + str(stop))
+                # if call:
+                #     gameText.prepLeftName(chosen[i])
+                #     gameText.prepRightName(str(avenger[i]) + " stop number: " + str(stop))
+                # else:
+                #     gameText.prepLeftName(avenger[i])
+                #     gameText.prepRightName(str(chosen[i]) + " stop number: " + str(stop))
+            gameText.draw_text()
+            center_line.draw_center_line()
+            stop += 1
 
 
+            #time = pygame.time.get_ticks()
+            #if time % 3500 == 0:
+                #if call:
+                    # add fall title under left name
+                    # add avenger title under right name
+                    # gray out the left name too?
+                 #   pass
+                #else:
+                    # add fall title under right name
+                    # add avenger title under left name
+                    # gray out the right name too?
+                   # pass
 
-    # Draw the play button if the game is inactive.
+
+            # if stop == length-1:
+            #     stats.game_active = False
+                # Draw the play button if the game is inactive.
     if not stats.game_active:
         screen.fill(ai_settings.bg_color)
         play_button.draw_button()
