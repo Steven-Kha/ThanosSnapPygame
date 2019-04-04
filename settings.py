@@ -8,6 +8,10 @@ class Settings():
         #thanos purple lol
         self.bg_color = (167, 136, 168)
 
+        self.start_color = (0, 0, 0)
+
+
+
         self.center_line_width = 6
         self.center_line_height = self.screen_height
         #more thanos purple lol

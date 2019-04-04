@@ -4,6 +4,7 @@ from center_line import Center_Line
 from settings import Settings
 from game_stats import GameStats
 from button import Button
+from nameToJudge import NameToJudge
 
 import game_functions as gf
 
@@ -21,6 +22,7 @@ def run_game():
     start_game = False
 
     stats = GameStats(ai_settings)
+    chdnOfThanos = NameToJudge(ai_settings,screen, "")
 
     #make the game objects
     center_line = Center_Line(ai_settings, screen)
