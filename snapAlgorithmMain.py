@@ -2,7 +2,7 @@ import random
 import time
 import os
 clear = lambda : os.system('cls')
-from childrenOfThanos import load, versus, writeChosen, writeAvenger, writeMatchUp
+from snapAlgorithm import load, versus, writeChosen, writeAvenger, writeMatchUp
 
 #---------Main --------------------
 
