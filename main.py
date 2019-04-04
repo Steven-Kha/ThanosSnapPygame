@@ -1,4 +1,6 @@
 import pygame
+from snapAlgorithmMain import infinitySnap
+infinitySnap()
 from center_line import Center_Line
 
 from settings import Settings
@@ -34,7 +36,7 @@ def run_game():
         gf.check_events(ai_settings, stats, play_button, screen)
 
         if stats.game_active:
-            print("hi!")
+            pass
 
         gf.update_screen(ai_settings, stats, center_line, play_button, screen)
 

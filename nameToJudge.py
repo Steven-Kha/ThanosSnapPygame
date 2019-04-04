@@ -11,7 +11,14 @@ class NameToJudge:
 
         self.font = pygame.font.SysFont(None, 48)
 
+        # function to display left participant
         self.prepLeftName(msg)
+
+        #function to display right participant
         self.prepRightName(msg)
 
+    def prepLeftName(self, msg):
+        pass
 
+    def prepRightName(self, msg):
+        pass
