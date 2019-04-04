@@ -13,18 +13,28 @@ class NameToJudge:
         self.font = pygame.font.SysFont(None, 48)
 
         # function to display left participant
-        self.prepLeftName(msg)
+        self.prepLeftName("")
 
         #function to display right participant
-        self.prepRightName(msg)
+        self.prepRightName("")
 
         self.prepVS("V  S")
 
     def prepLeftName(self, msg):
-        pass
+        leftName = msg
+        self.leftNameImage = self.font.render(leftName, True,
+                          self.leftColor, self.ai_settings.bg_color)
+        self.leftName_rect = self.leftNameImage.get_rect()
+        self.leftName_rect.centery = self.screen_rect.centery
+        self.leftName_rect.centerx = self.ai_settings.screen_width / 4
 
     def prepRightName(self, msg):
-        pass
+        rightName = msg
+        self.rightNameImage = self.font.render(rightName, True,
+                                              self.rightColor, self.ai_settings.bg_color)
+        self.rightName_rect = self.rightNameImage.get_rect()
+        self.rightName_rect.centery = self.screen_rect.centery
+        self.rightName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
 
     def prepVS(self, msg):
         vsStr = msg
@@ -37,7 +47,8 @@ class NameToJudge:
 
     def draw_text(self):
         self.screen.blit(self.vsImage, self.VS_rect)
-
+        self.screen.blit(self.leftNameImage, self.leftName_rect)
+        self.screen.blit(self.rightNameImage, self.rightName_rect)
         '''
         self.rect.centery = self.screen_rect.centery
         self.rect.centerx = self.screen_rect.centerx

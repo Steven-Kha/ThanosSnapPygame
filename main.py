@@ -22,7 +22,7 @@ def run_game():
         (ai_settings.screen_width, ai_settings.screen_height))
 
     screen = pygame.display.set_mode((1200, 800))
-    pygame.display.set_caption("Super Pong 64")
+    pygame.display.set_caption("Avenger's: EndGame")
 
     start_game = False
 
@@ -44,7 +44,8 @@ def run_game():
         if stats.game_active:
             pass
 
-        gf.update_screen(ai_settings, stats, center_line, gameText, play_button, screen)
+        gf.update_screen(ai_settings, stats, center_line, gameText, chosen, avenger,
+                         play_button, screen)
 
 
 run_game()

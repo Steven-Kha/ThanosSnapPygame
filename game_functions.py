@@ -1,5 +1,7 @@
 import sys
 import pygame
+import random
+import time
 
 
 def check_events(ai_settings, stats, play_button, screen):
@@ -20,12 +22,36 @@ def check_play_button(ai_settings, screen, stats, play_button, mouse_x,
         stats.game_active = True
 
 
-def update_screen(ai_settings, stats, center_line, gameText, play_button, screen):
+def update_screen(ai_settings, stats, center_line, gameText, chosen, avenger, play_button, screen):
     # Redraw the screen during each pass through the loop.
 
-    screen.fill(ai_settings.bg_color)
-    gameText.draw_text()
-    center_line.draw_center_line()
+    length = 0
+
+    if len(chosen)> len(avenger):
+        length = len(chosen)
+    else:
+        length = len(avenger)
+
+    call = 0
+
+    call = random.randint(0, 1)
+
+
+
+    for i in range(length):
+
+        screen.fill(ai_settings.bg_color)
+        time = pygame.time.get_ticks()
+        if time % 3000 == 0:
+            if call:
+                gameText.prepLeftName(chosen[i])
+                gameText.prepRightName(avenger[i])
+            else:
+                gameText.prepLeftName(avenger[i])
+                gameText.prepRightName(chosen[i])
+        gameText.draw_text()
+        center_line.draw_center_line()
+
 
 
     # Draw the play button if the game is inactive.
