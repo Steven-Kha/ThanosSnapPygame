@@ -26,34 +26,7 @@ def update_screen(ai_settings, stats, center_line, gameText,
                   chosen, avenger, stop, play_button, screen):
     if stats.game_active:
         length = 0
-
-        if len(chosen) > len(avenger):
-            length = len(avenger)
-        else:
-            length = len(chosen)
-
-        #call = 0
-
-        #call = random.randint(0, 1)
-
-        print("pygame running the for loop in range(length) \n")
-        while stop < length:
-            print ("stop number: " + str(stop))
-            screen.fill(ai_settings.bg_color)
-            stime = pygame.time.get_ticks()
-            if stime % 1000 == 0:
-                gameText.prepLeftName(chosen[stop])
-                gameText.prepRightName(str(avenger[stop]) + " stop number: " + str(stop))
-                # if call:
-                #     gameText.prepLeftName(chosen[i])
-                #     gameText.prepRightName(str(avenger[i]) + " stop number: " + str(stop))
-                # else:
-                #     gameText.prepLeftName(avenger[i])
-                #     gameText.prepRightName(str(chosen[i]) + " stop number: " + str(stop))
-            gameText.draw_text()
-            center_line.draw_center_line()
-            stop += 1
-
+        gameText.update(chosen, avenger, center_line)
 
             #time = pygame.time.get_ticks()
             #if time % 3500 == 0:

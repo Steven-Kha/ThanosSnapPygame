@@ -69,6 +69,55 @@ class NameToJudge:
     def prepChosenRight(self, msg):
         pass
 
+    def update(self, chosen, avenger, center_line):
+        if len(chosen) > len(avenger):
+            length = len(avenger)
+        else:
+            length = len(chosen)
+
+        # a vector that goes up to length of chosen/avenger whatever is largets
+        #lenVector = [0] * length-1
+
+        # for i in range(len(lenVector)):
+        #     lenVector[i] = i
+        #
+        #call = 0
+
+        #call = random.randint(0, 1)
+
+        #lenVector index counter iterator
+        j = 0
+
+        print("pygame running the for loop in range(length) \n")
+        while j < length:
+
+            print ("j counter: " + str(j))
+            self.screen.fill(self.ai_settings.bg_color)
+
+            #if stime % 5 == 0:
+            self.prepLeftName(chosen[j])
+            self.prepRightName(str(avenger[j]) + " stop number: " + str(j))
+
+                #j += 1
+                # if call:
+                #     self.prepLeftName(chosen[i])
+                #     self.prepRightName(str(avenger[i]) + " stop number: " + str(stop))
+                # else:
+                #     self.prepLeftName(avenger[i])
+                #     self.prepRightName(str(chosen[i]) + " stop number: " + str(stop))
+            # elif stime % 1111 == 1 and j == i:
+            #     self.prepLeftName(chosen[i])
+            #     self.prepRightName(str(avenger[i]) + " stop number: " + str(i))
+            #     #j += 1
+            center_line.draw_center_line()
+            stime = pygame.time.get_ticks()
+            if stime % 1000 == 0:
+                self.draw_text()
+            j += 1
+
+
+
+
 
     def draw_text(self):
         self.screen.blit(self.vsImage, self.VS_rect)
