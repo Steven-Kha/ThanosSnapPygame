@@ -23,32 +23,59 @@ def check_play_button(ai_settings, screen, stats, play_button, mouse_x,
 
 
 def update_screen(ai_settings, stats, center_line, gameText,
-                  chosen, avenger, stop, play_button, screen):
-    if stats.game_active:
-        length = 0
-        gameText.update(chosen, avenger, center_line)
+                  chosen, avenger, newChosen, newAvenger, popCounter, length,
+                  play_button, screen):
+    # if stats.game_active:
+    if len(chosen) > len(avenger):
+        length = len(avenger)
+        chosenLong = 1
+    else:
+        length = len(chosen)
+        avengerLong = 1
 
-            #time = pygame.time.get_ticks()
-            #if time % 3500 == 0:
-                #if call:
-                    # add fall title under left name
-                    # add avenger title under right name
-                    # gray out the left name too?
-                 #   pass
-                #else:
-                    # add fall title under right name
-                    # add avenger title under left name
-                    # gray out the right name too?
-                   # pass
+    screen.fill(ai_settings.bg_color)
+    leftName = ""
+    rightName = ""
 
 
-            # if stop == length-1:
-            #     stats.game_active = False
-                # Draw the play button if the game is inactive.
+    #print("am I running again?")
+    for i in range(length):
+        print(i)
+        sTime = pygame.time.get_ticks()
+        if sTime % 2 == 0:
+            #pop names so they don't appear again
+            leftName = chosen.pop()
+            rightName = avenger.pop()
+            newChosen.append(leftName)
+            newAvenger.append(rightName)
+            gameText.prepLeftName(leftName)
+            gameText.prepRightName(rightName + ": " + str(i))
+
+            #trying to display the odd name but it didnt' work maybe just add one more false name?
+            if (len(chosen) > 0 ) and len(avenger) == 0:
+                leftName = chosen.pop()
+                gameText.prepLeftName(leftName)
+            if (len(avenger) > 0 ) and len(chosen) == 0:
+                rightName = avenger.pop()
+                gameText.prepRightName(rightName)
+        gameText.draw_text()
+        center_line.draw_center_line()
+
+
+    print("we've displayed these many names: " + str(popCounter) + " x2!")
+    print("newChosen length: " + str(len(newChosen)))
+    print("newAvenger length: " + str(len(newAvenger)))
+
+    #stops names from appearing
+    if len(chosen) == 0 or len(avenger) == 0:
+        print("ALL NAMES HAVE BEEN POPPPED!!")
+        for i in range(len(newAvenger)):
+            print("new chosen: " + str(i) + ": " + str(newChosen[i]))
+            print("new avenger: " + str(i) + ": " + str(newAvenger[i]))
+
     if not stats.game_active:
         screen.fill(ai_settings.bg_color)
         play_button.draw_button()
-
 
     pygame.display.flip()
 

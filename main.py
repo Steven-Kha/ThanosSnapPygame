@@ -12,8 +12,20 @@ import game_functions as gf
 
 chosen = []
 avenger = []
-stop = 0
+newChosen = []
+newAvenger = []
+popCounter = 0
+chosenLong = 0
+length = 0
+
 infinitySnap(chosen, avenger)
+if len(chosen) > len(avenger):
+    length = len(avenger)
+    chosenLong = 1
+else:
+    length = len(chosen)
+    avengerLong = 1
+
 def run_game():
     # Initialize game and create a screen object.
     pygame.init()
@@ -45,8 +57,9 @@ def run_game():
         if stats.game_active:
             pass
 
-        gf.update_screen(ai_settings, stats, center_line, gameText, chosen,
-                         avenger, stop, play_button, screen)
+        gf.update_screen(ai_settings, stats, center_line, gameText,
+                  chosen, avenger, newChosen, newAvenger, popCounter, length,
+                  play_button, screen)
 
 
 run_game()
