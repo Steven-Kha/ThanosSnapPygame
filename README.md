@@ -8,6 +8,9 @@
 
 # TODOS
 
+Okay we got time down now we have to put more work on displaying fallen and avenger below the names
+We may want to switch the "Fallen" and "Avenger" names so they don't always appear on the left or right.
+
 Time to tip the scales.
 
 New IDEA:
