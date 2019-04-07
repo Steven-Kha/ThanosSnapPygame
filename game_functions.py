@@ -64,14 +64,6 @@ def update_screen(ai_settings, stats, center_line, gameText,
 
                 #print out these two times to see why they don't appear 3 seconds later.
 
-                dustStart = pygame.time.get_ticks()
-                dustStop = pygame.time.get_ticks()
-                while dustStop - dustStart < 3000:
-                    dustStop = pygame.time.get_ticks()
-                if dustStop - dustStart >= 3000:
-                    dustStart = dustStop
-                    gameText.prepTitleLeft("Dust")
-                    gameText.prepTitleRight("Avenger")
             else:
                 rightName = chosen.pop()
                 leftName = avenger.pop()
@@ -79,15 +71,21 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 newAvenger.append(leftName)
                 gameText.prepLeftName(leftName)
                 gameText.prepRightName(rightName + ": " + str(len(newChosen)))
-                dustStart = pygame.time.get_ticks()
-                dustStop = pygame.time.get_ticks()
-                while dustStop - dustStart < 3000:
-                    dustStop = pygame.time.get_ticks()
-                if dustStop - dustStart >= 3000:
-                    dustStart = dustStop
-                    gameText.prepTitleRight("Dust")
-                    gameText.prepTitleLeft("Avenger")
 
+        gameText.draw_text()
+        center_line.draw_center_line()
+     
+        dustStart = pygame.time.get_ticks()
+        dustStop = pygame.time.get_ticks()
+    
+        while (dustStop - dustStart < 3000):
+            if call:
+                gameText.prepTitleLeft(“Dust”)
+                gameText.prepTitleRight(“Avenger”)
+            else: 
+                gameText.prepTitleRight(“Dust”)
+                gameText.prepTitleLeft(“Avenger”)
+        
         gameText.draw_text()
         center_line.draw_center_line()
 
