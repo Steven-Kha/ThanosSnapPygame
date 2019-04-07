@@ -33,45 +33,64 @@ def update_screen(ai_settings, stats, center_line, gameText,
             length = len(chosen)
             avengerLong = 1
 
+        print ("length of newChosen: " + str(len(newChosen)))
         screen.fill(ai_settings.bg_color)
         leftName = ""
         rightName = ""
-        i = 0
 
-        #print("am I running again?")
-        #pygame.time.wait(2973)
+        # initialize first in case
+        call = 0
+
+        # randomly set it to 0 or 1
+        call = random.randint(0, 1)
+
         nowTime = pygame.time.get_ticks()
         sTime = pygame.time.get_ticks()
-        while (sTime - nowTime < 1000):
+        while (sTime - nowTime < 3000):
             sTime = pygame.time.get_ticks()
-        if sTime - nowTime >= 1000 and len(chosen) > 0:
+
+        if (sTime - nowTime >= 3000 and len(chosen) > 0):
             nowTime = sTime
             print("Tick tock is % by 1000: " + str(sTime))
             print
             #pop names so they don't appear again
+            if call:
+                leftName = chosen.pop()
+                rightName = avenger.pop()
+                newChosen.append(leftName)
+                newAvenger.append(rightName)
+                gameText.prepLeftName(leftName)
+                gameText.prepRightName(rightName + ": " + str(len(newChosen)))
 
-            popCounter += 1
-            leftName = chosen.pop()
-            rightName = avenger.pop()
-            newChosen.append(leftName)
-            newAvenger.append(rightName)
-            gameText.prepLeftName(leftName)
-            gameText.prepRightName(rightName + ": " + str(len(newChosen)))
+                #print out these two times to see why they don't appear 3 seconds later.
+
+                dustStart = pygame.time.get_ticks()
+                dustStop = pygame.time.get_ticks()
+                while dustStop - dustStart < 3000:
+                    dustStop = pygame.time.get_ticks()
+                if dustStop - dustStart >= 3000:
+                    dustStart = dustStop
+                    gameText.prepTitleLeft("Dust")
+                    gameText.prepTitleRight("Avenger")
+            else:
+                rightName = chosen.pop()
+                leftName = avenger.pop()
+                newChosen.append(rightName)
+                newAvenger.append(leftName)
+                gameText.prepLeftName(leftName)
+                gameText.prepRightName(rightName + ": " + str(len(newChosen)))
+                dustStart = pygame.time.get_ticks()
+                dustStop = pygame.time.get_ticks()
+                while dustStop - dustStart < 3000:
+                    dustStop = pygame.time.get_ticks()
+                if dustStop - dustStart >= 3000:
+                    dustStart = dustStop
+                    gameText.prepTitleRight("Dust")
+                    gameText.prepTitleLeft("Avenger")
+
         gameText.draw_text()
         center_line.draw_center_line()
 
-
-
-        # print("we've displayed these many names: " + str(popCounter) + " x2!")
-        # print("newChosen length: " + str(len(newChosen)))
-        # print("newAvenger length: " + str(len(newAvenger)))
-
-        #stops names from appearing
-        # if len(chosen) == 0 or len(avenger) == 0:
-        #     print("ALL NAMES HAVE BEEN POPPPED!!")
-        #     for i in range(len(newAvenger)):
-        #         print("new chosen: " + str(i) + ": " + str(newChosen[i]))
-        #         print("new avenger: " + str(i) + ": " + str(newAvenger[i]))
 
     if not stats.game_active:
         screen.fill(ai_settings.bg_color)

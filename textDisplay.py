@@ -16,7 +16,7 @@ class NameToJudge:
         self.prepLeftName("")
 
         #add avenger title below
-        self.prepAvengerLeft("")
+        self.prepTitleLeft("")
 
         #add fallen title below
         self.prepChosenLeft("")
@@ -25,7 +25,7 @@ class NameToJudge:
         self.prepRightName("")
 
         # add avenger title below
-        self.prepAvengerRight("")
+        self.prepTitleRight("")
 
         # add fallen title below
         self.prepChosenRight("")
@@ -57,16 +57,40 @@ class NameToJudge:
         self.VS_rect.centery = self.screen_rect.centery
         self.VS_rect.centerx = self.screen_rect.centerx
 
-    def prepAvengerLeft(self, msg):
+    def prepTitleLeft(self, msg):
+        leftName = msg
+        self.leftTitleNameImage = self.font.render(leftName, True,
+                            self.leftColor, self.ai_settings.bg_color)
+        self.leftTitleName_rect = self.leftNameImage.get_rect()
+        self.leftTitleName_rect.centery = self.screen_rect.centery + 40
+        self.leftTitleName_rect.centerx = self.ai_settings.screen_width / 4
         pass
 
-    def prepAvengerRight(self, msg):
+    def prepTitleRight(self, msg):
+        rightName = msg
+        self.rightTitleNameImage = self.font.render(rightName, True,
+                            self.rightColor, self.ai_settings.bg_color)
+        self.rightTitleName_rect = self.rightNameImage.get_rect()
+        self.rightTitleName_rect.centery = self.screen_rect.centery + 40
+        self.rightTitleName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
         pass
 
     def prepChosenLeft(self, msg):
+        # leftName = msg
+        # self.leftFallenNameImage = self.font.render(leftName, True,
+        #                     self.leftColor, self.ai_settings.bg_color)
+        # self.leftFallenName_rect = self.leftNameImage.get_rect()
+        # self.leftFallenName_rect.centery = self.screen_rect.centery + 40
+        # self.leftFallenName_rect.centerx = self.ai_settings.screen_width / 4
         pass
 
     def prepChosenRight(self, msg):
+        # rightName = msg
+        # self.rightFallenNameImage = self.font.render(rightName, True,
+        #                      self.rightColor, self.ai_settings.bg_color)
+        # self.rightFallenName_rect = self.rightNameImage.get_rect()
+        # self.rightFallenName_rect.centery = self.screen_rect.centery + 40
+        # self.rightFallenName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
         pass
 
 
@@ -74,6 +98,13 @@ class NameToJudge:
         self.screen.blit(self.vsImage, self.VS_rect)
         self.screen.blit(self.leftNameImage, self.leftName_rect)
         self.screen.blit(self.rightNameImage, self.rightName_rect)
+
+        self.screen.blit(self.leftTitleNameImage, self.leftTitleName_rect)
+        self.screen.blit(self.rightTitleNameImage, self.rightTitleName_rect)
+
+        # self.screen.blit(self.leftFallenNameImage, self.leftFallenName_rect)
+        # self.screen.blit(self.rightFallenNameImage, self.rightFallenName_rect)
+
         '''
         self.rect.centery = self.screen_rect.centery
         self.rect.centerx = self.screen_rect.centerx
