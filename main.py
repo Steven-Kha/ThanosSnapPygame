@@ -9,7 +9,7 @@ from button import Button
 from nameToJudge import NameToJudge
 
 import game_functions as gf
-
+clock = pygame.time.Clock()
 chosen = []
 avenger = []
 newChosen = []
@@ -58,7 +58,7 @@ def run_game():
             pass
 
         gf.update_screen(ai_settings, stats, center_line, gameText,
-                  chosen, avenger, newChosen, newAvenger, popCounter, length,
+                  chosen, avenger, newChosen, newAvenger, popCounter, clock,
                   play_button, screen)
 
 
