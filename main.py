@@ -6,7 +6,7 @@ from center_line import Center_Line
 from settings import Settings
 from game_stats import GameStats
 from button import Button
-from nameToJudge import NameToJudge
+from textDisplay import NameToJudge
 
 import game_functions as gf
 clock = pygame.time.Clock()
