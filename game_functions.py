@@ -79,12 +79,14 @@ def update_screen(ai_settings, stats, center_line, gameText,
         dustStop = pygame.time.get_ticks()
     
         while (dustStop - dustStart < 3000):
-            if call:
-                gameText.prepTitleLeft(“Dust”)
-                gameText.prepTitleRight(“Avenger”)
-            else: 
-                gameText.prepTitleRight(“Dust”)
-                gameText.prepTitleLeft(“Avenger”)
+            dustStop = pygame.time.get_ticks() 
+            
+        if call:
+            gameText.prepTitleLeft(“Dust”)
+            gameText.prepTitleRight(“Avenger”)
+        else: 
+             gameText.prepTitleRight(“Dust”)
+             gameText.prepTitleLeft(“Avenger”)
         
         gameText.draw_text()
         center_line.draw_center_line()
