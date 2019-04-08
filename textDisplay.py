@@ -9,26 +9,29 @@ class NameToJudge:
         self.leftColor = (255, 0, 0)
         self.rightColor = (0, 0, 255)
         self.vsColor = (167, 136, 168)
+        self.fallenColor = (102, 102, 102)
 
         self.font = pygame.font.SysFont(None, 48)
 
         # function to display left participant
         self.prepLeftName("")
 
+        self.prepRightName("")
+
         #add avenger title below
         self.prepTitleLeft("")
 
         #add fallen title below
-        self.prepChosenLeft("")
+        self.prepNumNames("")
 
         #function to display right participant
-        self.prepRightName("")
+        self.prepNamesRemain()
 
         # add avenger title below
         self.prepTitleRight("")
 
         # add fallen title below
-        self.prepChosenRight("")
+        #self.prepChosenRight("")
 
         self.prepVS("V  S")
 
@@ -75,22 +78,22 @@ class NameToJudge:
         self.rightTitleName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
         pass
 
-    def prepChosenLeft(self, msg):
-        # leftName = msg
-        # self.leftFallenNameImage = self.font.render(leftName, True,
-        #                     self.leftColor, self.ai_settings.bg_color)
-        # self.leftFallenName_rect = self.leftNameImage.get_rect()
-        # self.leftFallenName_rect.centery = self.screen_rect.centery + 40
-        # self.leftFallenName_rect.centerx = self.ai_settings.screen_width / 4
+    def prepNumNames(self, msg):
+        leftName = msg
+        self.leftFallenNameImage = self.font.render(leftName, True,
+                            self.fallenColor, self.ai_settings.bg_color)
+        self.leftFallenName_rect = self.leftNameImage.get_rect()
+        self.leftFallenName_rect.centery = self.screen_rect.centery + 80
+        self.leftFallenName_rect.centerx = self.ai_settings.screen_width / 4
         pass
 
-    def prepChosenRight(self, msg):
-        # rightName = msg
-        # self.rightFallenNameImage = self.font.render(rightName, True,
-        #                      self.rightColor, self.ai_settings.bg_color)
-        # self.rightFallenName_rect = self.rightNameImage.get_rect()
-        # self.rightFallenName_rect.centery = self.screen_rect.centery + 40
-        # self.rightFallenName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
+    def prepNamesRemain(self):
+        rightName = "left"
+        self.rightFallenNameImage = self.font.render(rightName, True,
+                             self.fallenColor, self.ai_settings.bg_color)
+        self.rightFallenName_rect = self.rightNameImage.get_rect()
+        self.rightFallenName_rect.centery = self.screen_rect.centery + 80
+        self.rightFallenName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
         pass
 
 
@@ -101,6 +104,9 @@ class NameToJudge:
 
         self.screen.blit(self.leftTitleNameImage, self.leftTitleName_rect)
         self.screen.blit(self.rightTitleNameImage, self.rightTitleName_rect)
+
+        self.screen.blit(self.leftFallenNameImage, self.leftFallenName_rect)
+        self.screen.blit(self.rightFallenNameImage, self.rightFallenName_rect)
 
         # self.screen.blit(self.leftFallenNameImage, self.leftFallenName_rect)
         # self.screen.blit(self.rightFallenNameImage, self.rightFallenName_rect)

@@ -26,6 +26,8 @@ def update_screen(ai_settings, stats, center_line, gameText,
                   chosen, avenger, newChosen, newAvenger, popCounter, clock,
                   play_button, screen):
     if stats.game_active:
+        screen.fill(ai_settings.bg_color)
+
         if len(chosen) > len(avenger):
             length = len(avenger)
             chosenLong = 1
@@ -33,8 +35,8 @@ def update_screen(ai_settings, stats, center_line, gameText,
             length = len(chosen)
             avengerLong = 1
 
-        print ("length of newChosen: " + str(len(newChosen)))
-        screen.fill(ai_settings.bg_color)
+        #print ("length of newChosen: " + str(len(newChosen)))
+
         leftName = ""
         rightName = ""
 
@@ -43,32 +45,32 @@ def update_screen(ai_settings, stats, center_line, gameText,
 
         # randomly set it to 0 or 1
         call = random.randint(0, 1)
-        print("-" * 40)
+        #print("-" * 40)
         nowTime = pygame.time.get_ticks()
-        print("nowTime: " + str(nowTime))
+        #print("nowTime: " + str(nowTime))
         sTime = pygame.time.get_ticks()
-        print("sTime: " + str(sTime))
-        print("-" * 40)
-        print("while sTime - nowTime < 3000: ")
+        #print("sTime: " + str(sTime))
+        #print("-" * 40)
+        #print("while sTime - nowTime < 3000: ")
         while (sTime - nowTime < 3000):
             sTime = pygame.time.get_ticks()
             # print("nowTime: " + str(nowTime))
             # print("sTime: " + str(sTime))
-        print("-" * 40)
+        #print("-" * 40)
 
         if (sTime - nowTime >= 3000 and len(chosen) > 0):
-            print(str(sTime) + " - " + str(nowTime) + ">= 3000")
+            #print(str(sTime) + " - " + str(nowTime) + ">= 3000")
             nowTime = sTime
 
             #pop names so they don't appear again
             if call:
-                print ("call is 1")
+                #print ("call is 1")
                 leftName = chosen.pop()
                 rightName = avenger.pop()
                 newChosen.append(leftName)
                 newAvenger.append(rightName)
                 gameText.prepLeftName(leftName)
-                gameText.prepRightName(rightName + ": " + str(len(newChosen)))
+                gameText.prepRightName(rightName)
                 gameText.prepTitleLeft('Dust')
                 gameText.prepTitleRight('Avenger')
 
@@ -81,10 +83,12 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 newChosen.append(rightName)
                 newAvenger.append(leftName)
                 gameText.prepLeftName(leftName)
-                gameText.prepRightName(rightName + ": " + str(len(newChosen)))
+                gameText.prepRightName(rightName)
                 gameText.prepTitleRight('Dust')
                 gameText.prepTitleLeft('Avenger')
 
+        gameText.prepNumNames(str(length - len(newAvenger)))
+        gameText.prepNamesRemain()
         gameText.draw_text()
         center_line.draw_center_line()
 

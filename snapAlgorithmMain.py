@@ -73,4 +73,4 @@ def infinitySnap(chosen, avenger):
     #write the names of avengers to textfile
     writeAvenger(avenger)
 
-    print("End of snap Algorithm\nPygame debugging starts now.\n")
+    #print("End of snap Algorithm\nPygame debugging starts now.\n")

@@ -91,12 +91,12 @@ def oddNameLeft(biotic, lastOneChosen, chosen, avenger):
         chosen.append(biotic.pop())
         lastOneChosen = True
         #print("Last one chosen is True!")
-        print(str(chosen[len(chosen) - 1]) + " has fallen.")
+        #print(str(chosen[len(chosen) - 1]) + " has fallen.")
 
     else:
         avenger.append(biotic.pop())
         #print("Last one chosen is False!")
-        print(str(avenger[len(avenger) - 1]) + " is an avenger.")
+        #print(str(avenger[len(avenger) - 1]) + " is an avenger.")
 
 
     return True
