@@ -16,7 +16,7 @@ newChosen = []
 newAvenger = []
 popCounter = 0
 chosenLong = 0
-length = 0
+
 
 infinitySnap(chosen, avenger)
 if len(chosen) > len(avenger):
@@ -58,7 +58,7 @@ def run_game():
             pass
 
         gf.update_screen(ai_settings, stats, center_line, gameText,
-                  chosen, avenger, newChosen, newAvenger, popCounter, clock,
+                  chosen, avenger, newChosen, newAvenger, length, clock,
                   play_button, screen)
 
 

@@ -25,7 +25,7 @@ class NameToJudge:
         self.prepNumNames("")
 
         #function to display right participant
-        self.prepNamesRemain()
+        self.prepNamesRemain("")
 
         # add avenger title below
         self.prepTitleRight("")
@@ -49,7 +49,7 @@ class NameToJudge:
                                               self.rightColor, self.ai_settings.bg_color)
         self.rightName_rect = self.rightNameImage.get_rect()
         self.rightName_rect.centery = self.screen_rect.centery
-        self.rightName_rect.centerx = (self.ai_settings.screen_width * 3) / 4
+        self.rightName_rect.centerx = ((self.ai_settings.screen_width * 3) / 4)
 
     def prepVS(self, msg):
         vsStr = msg
@@ -87,8 +87,8 @@ class NameToJudge:
         self.leftFallenName_rect.centerx = self.ai_settings.screen_width / 4
         pass
 
-    def prepNamesRemain(self):
-        rightName = "left"
+    def prepNamesRemain(self, msg):
+        rightName = msg
         self.rightFallenNameImage = self.font.render(rightName, True,
                              self.fallenColor, self.ai_settings.bg_color)
         self.rightFallenName_rect = self.rightNameImage.get_rect()

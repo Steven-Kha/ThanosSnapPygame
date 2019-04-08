@@ -21,19 +21,19 @@ def check_play_button(ai_settings, screen, stats, play_button, mouse_x,
         pygame.mouse.set_visible(False)
         stats.game_active = True
 
+        pygame.mixer.init()
+        pygame.mixer.music.load('Music\Giants Theme - The Legend of Zelda- Majoras Mask.mp3')
+        pygame.mixer.music.play(-1)
+
 
 def update_screen(ai_settings, stats, center_line, gameText,
-                  chosen, avenger, newChosen, newAvenger, popCounter, clock,
+                  chosen, avenger, newChosen, newAvenger, length, clock,
                   play_button, screen):
     if stats.game_active:
+
         screen.fill(ai_settings.bg_color)
 
-        if len(chosen) > len(avenger):
-            length = len(avenger)
-            chosenLong = 1
-        else:
-            length = len(chosen)
-            avengerLong = 1
+
 
         #print ("length of newChosen: " + str(len(newChosen)))
 
@@ -52,13 +52,13 @@ def update_screen(ai_settings, stats, center_line, gameText,
         #print("sTime: " + str(sTime))
         #print("-" * 40)
         #print("while sTime - nowTime < 3000: ")
-        while (sTime - nowTime < 3000):
+        while (sTime - nowTime < 2081):
             sTime = pygame.time.get_ticks()
             # print("nowTime: " + str(nowTime))
             # print("sTime: " + str(sTime))
         #print("-" * 40)
 
-        if (sTime - nowTime >= 3000 and len(chosen) > 0):
+        if (sTime - nowTime >= 2081 and len(chosen) > 0):
             #print(str(sTime) + " - " + str(nowTime) + ">= 3000")
             nowTime = sTime
 
@@ -73,6 +73,8 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 gameText.prepRightName(rightName)
                 gameText.prepTitleLeft('Dust')
                 gameText.prepTitleRight('Avenger')
+                gameText.prepNumNames(str(len(chosen)))
+                gameText.prepNamesRemain("left")
 
                 #print out these two times to see why they don't appear 3 seconds later.
 
@@ -86,9 +88,9 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 gameText.prepRightName(rightName)
                 gameText.prepTitleRight('Dust')
                 gameText.prepTitleLeft('Avenger')
+                gameText.prepNumNames(str(len(chosen)))
+                gameText.prepNamesRemain("left")
 
-        gameText.prepNumNames(str(length - len(newAvenger)))
-        gameText.prepNamesRemain()
         gameText.draw_text()
         center_line.draw_center_line()
 
@@ -129,9 +131,11 @@ def update_screen(ai_settings, stats, center_line, gameText,
         gameText.prepTitleLeft('')
         gameText.prepTitleRight('')
 
-        if len(chosen) == 0:
+        if len(chosen) < 1:
             gameText.prepLeftName("THE")
             gameText.prepRightName("END")
+            gameText.prepNamesRemain("")
+            gameText.prepNumNames("")
 
 
     if not stats.game_active:
