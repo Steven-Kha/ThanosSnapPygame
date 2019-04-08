@@ -43,23 +43,22 @@ def update_screen(ai_settings, stats, center_line, gameText,
 
         # randomly set it to 0 or 1
         call = random.randint(0, 1)
-
+        print("-" * 40)
         nowTime = pygame.time.get_ticks()
         print("nowTime: " + str(nowTime))
         sTime = pygame.time.get_ticks()
         print("sTime: " + str(sTime))
-
-        print("while sTime - nowTime < 3: ")
         print("-" * 40)
+        print("while sTime - nowTime < 3000: ")
         while (sTime - nowTime < 3000):
             sTime = pygame.time.get_ticks()
-            print("nowTime: " + str(nowTime))
-            print("sTime: " + str(sTime))
+            # print("nowTime: " + str(nowTime))
+            # print("sTime: " + str(sTime))
         print("-" * 40)
 
         if (sTime - nowTime >= 3000 and len(chosen) > 0):
-            nowTime = sTime
             print(str(sTime) + " - " + str(nowTime) + ">= 3000")
+            nowTime = sTime
 
             #pop names so they don't appear again
             if call:
@@ -70,6 +69,8 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 newAvenger.append(rightName)
                 gameText.prepLeftName(leftName)
                 gameText.prepRightName(rightName + ": " + str(len(newChosen)))
+                gameText.prepTitleLeft('Dust')
+                gameText.prepTitleRight('Avenger')
 
                 #print out these two times to see why they don't appear 3 seconds later.
 
@@ -81,40 +82,52 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 newAvenger.append(leftName)
                 gameText.prepLeftName(leftName)
                 gameText.prepRightName(rightName + ": " + str(len(newChosen)))
-
-        gameText.draw_text()
-        center_line.draw_center_line()
-     
-        dustStart = pygame.time.get_ticks()
-        print("dustStart: " + str(dustStart))
-        dustStop = pygame.time.get_ticks()
-        print("dustStop: " + str(dustStop))
-
-        print("while dustStop - dustTime < 3000")
-        print("-"*40)
-
-        while dustStop - dustStart < 3000:
-            dustStop = pygame.time.get_ticks()
-            print("dustStart: " + str(dustStart))
-            print("dustStop: " + str(dustStop))
-        print("-" * 40)
-
-        if dustStop - dustStart >= 3000:
-            print( str(dustStart) + "-" + str(dustStop) + ">=3000")
-            if call:
-                dustStart = dustStop
-                gameText.prepTitleLeft('Dust')
-                gameText.prepTitleRight('Avenger')
-            else:
-                dustStart = dustStop
                 gameText.prepTitleRight('Dust')
                 gameText.prepTitleLeft('Avenger')
-        
+
         gameText.draw_text()
         center_line.draw_center_line()
+
+        # print("-" * 40)
+        # print("printing subtitles now...")
+        # print("-" * 40)
+        #
+        # nowTime = pygame.time.get_ticks()
+        # sTime = pygame.time.get_ticks()
+        # print("nowTime: " + str(nowTime))
+        # print("sTime: " + str(sTime))
+        #
+        # print("-" * 40)
+        # print("while sTime - nowTime < 3000")
+        # print("-" * 40)
+        #
+        # while sTime - nowTime < 3000:
+        #     gameText.draw_text()
+        #     center_line.draw_center_line()
+        #     sTime = pygame.time.get_ticks()
+        #     # print("nowTime: " + str(nowTime))
+        #     # print("sTime: " + str(sTime))
+        #
+        # if sTime - nowTime >= 3000:
+        #     print(str(sTime) + "-" + str(nowTime) + ">=3000")
+        #     if call:
+        #         nowTime = sTime
+        #         gameText.prepTitleLeft('Dust')
+        #         gameText.prepTitleRight('Avenger')
+        #     else:
+        #         nowTime = sTime
+        #         gameText.prepTitleRight('Dust')
+        #         gameText.prepTitleLeft('Avenger')
+        #
+        # gameText.draw_text()
+        # center_line.draw_center_line()
 
         gameText.prepTitleLeft('')
         gameText.prepTitleRight('')
+
+        if len(chosen) == 0:
+            gameText.prepLeftName("THE")
+            gameText.prepRightName("END")
 
 
     if not stats.game_active:

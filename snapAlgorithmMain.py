@@ -31,29 +31,31 @@ def infinitySnap(chosen, avenger):
     # for i in range(len(biotic)):
     #     print(str(i) + ": " + str(biotic[i]))
 
-    print("Number of living names at the start: " + str(len(biotic)))
+    #print("Number of living names at the start: " + str(len(biotic)))
 
     # for i in range(len(fiftyFifty)):
     #     print(str(i) + ": " + str(fiftyFifty[i]))
 
     while len(biotic) > 0:
 
-        if len(biotic) > 1:
-            print(str(biotic[len(biotic)-1]) + " vs. " + str(biotic[len(biotic)-2]) )
-            print("")
+        #if len(biotic) > 1:
+            #print(str(biotic[len(biotic)-1]) + " vs. " + str(biotic[len(biotic)-2]) )
+            #print("")
         if len(biotic) > 0 and len(biotic) < 2:
-            print("Last but not least. " + str(biotic[0]) + "...")
+            #print("Last but not least. " + str(biotic[0]) + "...")
+            pass
         #time.sleep(3)
         #pops the top two biotics or calls oddNameLeft to decide the last name in biotic
         if versus(fiftyFifty, biotic, chosen, avenger, lastOne, lastOneChosen):
+            pass
             #exit() #has the a print message who is fallen or an avenger
-            print(str(chosen[len(chosen)-1]) + " has fallen.")
-            print(str(avenger[len(avenger)-1]) + " is an avenger.")
-        print("")
-        print("Number of names to be decided still: " + str(len(biotic)))
-        print("")
+            #print(str(chosen[len(chosen)-1]) + " has fallen.")
+            #print(str(avenger[len(avenger)-1]) + " is an avenger.")
+        #print("")
+        #print("Number of names to be decided still: " + str(len(biotic)))
+        #print("")
         #time.sleep(3.5)
-        clear()
+        #clear()
 
 
 
@@ -70,3 +72,5 @@ def infinitySnap(chosen, avenger):
 
     #write the names of avengers to textfile
     writeAvenger(avenger)
+
+    print("End of snap Algorithm\nPygame debugging starts now.\n")
