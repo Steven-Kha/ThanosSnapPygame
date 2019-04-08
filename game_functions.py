@@ -45,16 +45,25 @@ def update_screen(ai_settings, stats, center_line, gameText,
         call = random.randint(0, 1)
 
         nowTime = pygame.time.get_ticks()
+        print("nowTime: " + str(nowTime))
         sTime = pygame.time.get_ticks()
+        print("sTime: " + str(sTime))
+
+        print("while sTime - nowTime < 3: ")
+        print("-" * 40)
         while (sTime - nowTime < 3000):
             sTime = pygame.time.get_ticks()
+            print("nowTime: " + str(nowTime))
+            print("sTime: " + str(sTime))
+        print("-" * 40)
 
         if (sTime - nowTime >= 3000 and len(chosen) > 0):
             nowTime = sTime
-            print("Tick tock is % by 1000: " + str(sTime))
-            print
+            print(str(sTime) + " - " + str(nowTime) + ">= 3000")
+
             #pop names so they don't appear again
             if call:
+                print ("call is 1")
                 leftName = chosen.pop()
                 rightName = avenger.pop()
                 newChosen.append(leftName)
@@ -65,6 +74,7 @@ def update_screen(ai_settings, stats, center_line, gameText,
                 #print out these two times to see why they don't appear 3 seconds later.
 
             else:
+                print ("call is 0")
                 rightName = chosen.pop()
                 leftName = avenger.pop()
                 newChosen.append(rightName)
@@ -76,20 +86,35 @@ def update_screen(ai_settings, stats, center_line, gameText,
         center_line.draw_center_line()
      
         dustStart = pygame.time.get_ticks()
+        print("dustStart: " + str(dustStart))
         dustStop = pygame.time.get_ticks()
-    
-        while (dustStop - dustStart < 3000):
-            dustStop = pygame.time.get_ticks() 
-            
-        if call:
-            gameText.prepTitleLeft(“Dust”)
-            gameText.prepTitleRight(“Avenger”)
-        else: 
-             gameText.prepTitleRight(“Dust”)
-             gameText.prepTitleLeft(“Avenger”)
+        print("dustStop: " + str(dustStop))
+
+        print("while dustStop - dustTime < 3000")
+        print("-"*40)
+
+        while dustStop - dustStart < 3000:
+            dustStop = pygame.time.get_ticks()
+            print("dustStart: " + str(dustStart))
+            print("dustStop: " + str(dustStop))
+        print("-" * 40)
+
+        if dustStop - dustStart >= 3000:
+            print( str(dustStart) + "-" + str(dustStop) + ">=3000")
+            if call:
+                dustStart = dustStop
+                gameText.prepTitleLeft('Dust')
+                gameText.prepTitleRight('Avenger')
+            else:
+                dustStart = dustStop
+                gameText.prepTitleRight('Dust')
+                gameText.prepTitleLeft('Avenger')
         
         gameText.draw_text()
         center_line.draw_center_line()
+
+        gameText.prepTitleLeft('')
+        gameText.prepTitleRight('')
 
 
     if not stats.game_active:
